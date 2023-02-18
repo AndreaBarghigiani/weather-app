@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Dubai",
+    "position": {
+      "lat": 25.276987,
+      "lon": 55.296249
+    },
+    "current": false
+  },
+  {
+    "name": "Paris",
+    "position": {
+      "lat": 48.864716,
+      "lon": 2.349014
+    },
+    "current": false
+  },
+  {
+    "name": "Lisbon",
+    "position": {
+      "lat": 38.736946,
+      "lon": -9.142685
+    },
+    "current": false
+  },
+  {
+    "name": "San Francisco",
+    "position": {
+      "lat": 37.773972,
+      "lon": -122.431297
+    },
+    "current": false
+  }
+]
