@@ -5,13 +5,15 @@ function CityTemp({ className, weather }) {
   const { icon } = weather.current.weather[0];
   const classes = clsx(
     className,
-    "bg-gradient-to-tl from-blue-500 to-blue-600"
+    "bg-gradient-to-tl from-blue-500 to-blue-600 pt-6 rounded-r-xl rouded-b-xl shadow-xl"
   );
 
   return (
     <div className={classes}>
-      <p>{temp}</p>
-      <img className="h-32 w-32" src={`/icons/${icon}.svg`} />
+      <p className="text-center text-4xl font-bold text-white">
+        {Math.round(temp)}&deg;
+      </p>
+      <img className="h-24 w-24" src={`/icons/${icon}.svg`} />
     </div>
   );
 }

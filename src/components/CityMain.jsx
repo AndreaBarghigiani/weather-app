@@ -24,10 +24,11 @@ function CityMain({ className }) {
     isLoading,
     isSuccess,
   } = useGetWeatherQuery(city);
+  console.log(weather);
   const cityDate = weather ? dayjs().tz(weather.timezone) : null;
   const classes = clsx(
     className,
-    "rounded-xl relative py-10 px-16 bg-right-top bg-[url('/turin.jpg')]",
+    "rounded-xl relative flex items-start py-10 px-32 bg-right-top bg-[url('/turin.jpg')]",
     {
       "text-md": true,
     }
@@ -37,20 +38,19 @@ function CityMain({ className }) {
 
   return (
     <div className={classes}>
-      <p className="text-xl">{city.name}</p>
+      <div className="absolute top-1/2 -left-8  flex -translate-y-1/2 transform">
+        {isSuccess ? <CityTemp className="mr-8" weather={weather} /> : null}
+        <div className="flex flex-col space-y-1 text-app-500">
+          <p className="text-2xl font-semibold">{city.name}</p>
 
-      {cityDate ? (
-        <time dateTime={cityDate.format()}>
-          {cityDate.format("dddd DD, MMMM")}
-        </time>
-      ) : null}
-
-      {isSuccess ? (
-        <CityTemp
-          className="absolute -left-7 top-1/2 -translate-y-1/2 transform"
-          weather={weather}
-        />
-      ) : null}
+          {cityDate ? (
+            <time className="font-medium" dateTime={cityDate.format()}>
+              {cityDate.format("dddd DD, MMMM")}
+            </time>
+          ) : null}
+          {isSuccess ? <p>{weather.current.weather[0].main}</p> : null}
+        </div>
+      </div>
     </div>
   );
 }
