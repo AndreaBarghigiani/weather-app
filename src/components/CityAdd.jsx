@@ -1,5 +1,30 @@
 function CityAdd() {
-  return <p>This is CityAdd</p>;
+  const handleClick = () => {
+    console.log(`Time to add a city`);
+  };
+
+  return (
+    <button
+      className="mx-auto my-4 flex font-semibold text-app-500"
+      onClick={handleClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="mr-3 h-6 w-6 rounded border border-app-500"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+      Add city
+    </button>
+  );
 }
 
 export default CityAdd;
