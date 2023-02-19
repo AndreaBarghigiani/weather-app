@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { citiesReducer, addCity, currentCity } from "./slices/cities";
 import { setupListeners } from "@reduxjs/toolkit/dist/query/react";
 import { weatherSlice } from "./slices/weatherApiSlice";
