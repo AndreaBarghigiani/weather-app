@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 // Redux
-import { useGetWeatherQuery } from "../store/slices/weatherApiSlice";
+import { useGetWeatherQuery } from "../store/";
 
 // Date
 import dayjs from "dayjs";

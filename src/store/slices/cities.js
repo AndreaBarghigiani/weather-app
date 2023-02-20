@@ -19,15 +19,25 @@ export const citiesSlice = createSlice({
   initialState,
   reducers: {
     addCity: (state) => state.push(additionalState.shift()),
+    addCustomCity: (state, action) => {
+      const city = {
+        id: nanoid(),
+        current: true,
+        ...action.payload,
+      };
+      return [...state.map((city) => ({ ...city, current: false })), city];
+    },
     setCurrentCity: (state, action) =>
       state.reduce((acc, cur) => {
         cur.current = cur.name === action.payload.name;
         acc.push(cur);
+
+        return acc;
       }, []),
     currentCity: (state) => state.filter((city) => city.current),
   },
 });
 
-export const { addCity, currentCity } = citiesSlice.actions;
+export const { addCity, currentCity, addCustomCity } = citiesSlice.actions;
 
 export const citiesReducer = citiesSlice.reducer;

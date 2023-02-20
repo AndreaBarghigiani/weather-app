@@ -8,7 +8,7 @@ export const weatherSlice = createApi({
   endpoints: (builder) => ({
     getWeather: builder.query({
       query: (city) => {
-        const { lat, lon } = city.position;
+        const { lat, lon } = city;
         return {
           url: "onecall",
           params: {

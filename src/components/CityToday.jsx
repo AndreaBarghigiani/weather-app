@@ -5,7 +5,7 @@ import TodayBox from "./TodayBox";
 
 // Redux
 import { useSelector } from "react-redux";
-import { useGetWeatherQuery } from "../store/slices/weatherApiSlice";
+import { useGetWeatherQuery } from "../store/";
 
 function CityToday({ className }) {
   const city = useSelector((state) =>

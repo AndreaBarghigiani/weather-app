@@ -5,7 +5,7 @@ import CityTemp from "./CityTemp";
 
 // Redux
 import { useSelector } from "react-redux";
-import { useGetWeatherQuery } from "../store/slices/weatherApiSlice";
+import { useGetWeatherQuery } from "../store/";
 
 // Date
 import dayjs from "dayjs";

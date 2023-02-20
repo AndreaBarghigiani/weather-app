@@ -6,7 +6,7 @@ import TabSnapshotPanel from "./TabSnapshotPanel";
 
 // Redux
 import { useSelector } from "react-redux";
-import { useGetWeatherQuery } from "../store/slices/weatherApiSlice";
+import { useGetWeatherQuery } from "../store/";
 
 // Date
 import dayjs from "dayjs";
@@ -79,7 +79,7 @@ function CityTabs({ className }) {
               target="_blank"
               href="https://openweathermap.org/full-price#current"
             >
-              for free
+              for free.
             </a>
           </Tab.Panel>
         </Tab.Panels>
