@@ -24,7 +24,7 @@ function CityMain({ className }) {
     isLoading,
     isSuccess,
   } = useGetWeatherQuery(city);
-  console.log(weather);
+
   const cityDate = weather ? dayjs().tz(weather.timezone) : null;
   const classes = clsx(
     className,
