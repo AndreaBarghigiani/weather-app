@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import dayjs from "dayjs";
 
-function TodayLine({ hour, index }) {
+function TodayLine({ hour, index, timezone }) {
   // const classes = clsx()
   return (
     <div
@@ -38,7 +38,7 @@ function TodayLine({ hour, index }) {
           "font-medium": index === 0,
         })}
       >
-        {dayjs.unix(hour.dt).format("hh a")}
+        {dayjs.unix(hour.dt).tz(timezone).format("hh a")}
       </p>
     </div>
   );

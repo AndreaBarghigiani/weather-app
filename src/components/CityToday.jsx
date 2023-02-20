@@ -22,7 +22,7 @@ function CityToday({ className }) {
 
   return (
     <div className={classes}>
-      <h3 className="mb-4 text-2xl font-semibold">Today</h3>
+      <h3 className="my-4 text-2xl font-semibold">Today</h3>
 
       {isSuccess ? <TodayBox weather={weather} /> : null}
     </div>
