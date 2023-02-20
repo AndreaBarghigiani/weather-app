@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.11",
     "@reduxjs/toolkit": "^1.9.2",
     "dayjs": "^1.11.7",
     "react": "^18.2.0",
