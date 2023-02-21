@@ -1,26 +1,26 @@
 [
   {
     "name": "Turin",
-    "lat": 45.116177,
-    "lon": 7.742615,
+    "lat": 45.0677551,
+    "lon": 7.6824892,
     "current": false
   },
   {
     "name": "London",
-    "lat": 51.509865,
-    "lon": -0.118092,
+    "lat": 51.5073219,
+    "lon": -0.1276474,
     "current": false
   },
   {
     "name": "Rome",
-    "lat": 41.902782,
-    "lon": 12.496366,
+    "lat": 41.8933203,
+    "lon": 12.4829321,
     "current": false
   },
   {
     "name": "San Francisco",
-    "lat": 37.773972,
-    "lon": -122.431297,
+    "lat": 37.7790262,
+    "lon": -122.419906,
     "current": true
   }
 ]
