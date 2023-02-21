@@ -11,8 +11,7 @@ function CitySearch({ className }) {
   const [skip, setSkip] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  let { data, isLoading, ...rest } = useFindCityQuery(searchTerm, { skip });
-  console.log("rest:", rest);
+  const { data, isLoading, ...rest } = useFindCityQuery(searchTerm, { skip });
 
   const classes = clsx(className);
 
@@ -26,7 +25,6 @@ function CitySearch({ className }) {
   const clearResults = () => {
     setSearchTerm();
     setSkip(true);
-    data = null;
     inputTerm.current.value = "";
   };
 
@@ -62,7 +60,7 @@ function CitySearch({ className }) {
       </form>
       {isLoading ? "Loading..." : null}
 
-      {data ? (
+      {data && !skip ? (
         <SelectCity cities={data} emtpySearchTerm={clearResults} />
       ) : null}
     </div>

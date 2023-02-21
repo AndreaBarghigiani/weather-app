@@ -20,12 +20,26 @@ export const citiesSlice = createSlice({
   reducers: {
     addCity: (state) => state.push(additionalState.shift()),
     addCustomCity: (state, action) => {
+      const alreadyPresent = (arr, obj) =>
+        arr.some((city) => city.lat === obj.lat && city.lon === obj.lon);
+
       const city = {
         id: nanoid(),
         current: true,
         ...action.payload,
       };
-      return [...state.map((city) => ({ ...city, current: false })), city];
+
+      if (alreadyPresent(state, city)) {
+        return [
+          ...state.map((item) =>
+            item.lat === city.lat && item.lon === city.lon
+              ? { ...item, current: true }
+              : { ...item, current: false }
+          ),
+        ];
+      } else {
+        return [...state.map((city) => ({ ...city, current: false })), city];
+      }
     },
     setCurrentCity: (state, action) =>
       state.reduce((acc, cur) => {
