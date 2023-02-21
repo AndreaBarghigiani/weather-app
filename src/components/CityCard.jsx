@@ -31,7 +31,7 @@ function CityCard({ city }) {
     weather?.current?.sunset
   );
   const classes = clsx(
-    "flex items-center justify-between rounded-xl p-4 text-white shadow-xl",
+    "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-xl",
     {
       "bg-blue-600": isSunUp,
       "bg-blue-900": !isSunUp,
@@ -50,8 +50,8 @@ function CityCard({ city }) {
           </time>
         ) : null}
       </header>
-      <img className="h-24 w-24" src={`/icons/${icon}.svg`} />
-      <p className="text-center text-4xl font-bold text-white">
+      <img className="mx-auto h-24 w-24" src={`/icons/${icon}.svg`} />
+      <p className="ml-auto text-center text-4xl font-bold text-white">
         {Math.floor(temp)}&deg;
       </p>
     </div>
