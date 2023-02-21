@@ -11,13 +11,12 @@ function CitySearch({ className }) {
   const [skip, setSkip] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { data, isLoading, ...rest } = useFindCityQuery(searchTerm, { skip });
+  const { data, isLoading, error } = useFindCityQuery(searchTerm, { skip });
 
   const classes = clsx(className);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`time to search`);
     setSearchTerm(inputTerm.current.value);
     setSkip(false);
   };
@@ -30,7 +29,7 @@ function CitySearch({ className }) {
 
   return (
     <div className={classes}>
-      <h3 className="my-4 text-2xl font-semibold">Search</h3>
+      <h3 className="my-4 text-2xl font-semibold text-app-500">Search</h3>
 
       <form
         className="flex h-24 items-stretch rounded-xl bg-white shadow-xl"
@@ -61,7 +60,11 @@ function CitySearch({ className }) {
       {isLoading ? "Loading..." : null}
 
       {data && !skip ? (
-        <SelectCity cities={data} emtpySearchTerm={clearResults} />
+        <div className="relative">
+          <SelectCity cities={data} emtpySearchTerm={clearResults} />
+          <div className="pointer-events-none absolute top-0 h-2 w-full bg-gradient-to-b from-stone-300 to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 h-2 w-full bg-gradient-to-t from-stone-300 to-transparent" />
+        </div>
       ) : null}
     </div>
   );
