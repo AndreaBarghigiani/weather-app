@@ -2,8 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import {
   citiesReducer,
   addCity,
-  currentCity,
   addCustomCity,
+  setCurrentCity,
+  addRandomCity,
 } from "./slices/cities";
 import { setupListeners } from "@reduxjs/toolkit/dist/query/react";
 import { weatherSlice } from "./slices/weatherApiSlice";
@@ -21,6 +22,9 @@ const store = configureStore({
       .concat(geolocationSlice.middleware),
 });
 
-export { store, addCity, currentCity, addCustomCity };
-export { useFindCityQuery } from "./slices/geolocationApiSlice";
+export { store, addCity, addCustomCity, setCurrentCity, addRandomCity };
+export {
+  useFindCityQuery,
+  useFindCityCoordQuery,
+} from "./slices/geolocationApiSlice";
 export { useGetWeatherQuery } from "./slices/weatherApiSlice";

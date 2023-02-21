@@ -1,6 +1,12 @@
+//Redux
+import { useDispatch } from "react-redux";
+import { addRandomCity } from "../store";
+
 function CityAdd() {
+  const dispatch = useDispatch();
+
   const handleClick = () => {
-    console.log(`Time to add a city`);
+    dispatch(addRandomCity());
   };
 
   return (

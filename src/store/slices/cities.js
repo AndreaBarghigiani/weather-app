@@ -1,8 +1,8 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 // Data
-import initialCities from "../../data/initialCities.json";
-import additionalCities from "../../data/additionalCities.json";
+import initialCities from "../../assets/data/initialCities.json";
+import additionalCities from "../../assets/data/additionalCities.json";
 
 const initialState = initialCities.map((city) => {
   city.id = nanoid();
@@ -41,17 +41,20 @@ export const citiesSlice = createSlice({
         return [...state.map((city) => ({ ...city, current: false })), city];
       }
     },
-    setCurrentCity: (state, action) =>
-      state.reduce((acc, cur) => {
-        cur.current = cur.name === action.payload.name;
-        acc.push(cur);
-
-        return acc;
-      }, []),
-    currentCity: (state) => state.filter((city) => city.current),
+    setCurrentCity: (state, action) => [
+      ...state.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, current: true }
+          : { ...item, current: false }
+      ),
+    ],
+    addRandomCity: (state) => {
+      return [additionalCities.pop(), ...state];
+    },
   },
 });
 
-export const { addCity, currentCity, addCustomCity } = citiesSlice.actions;
+export const { addCity, addCustomCity, setCurrentCity, addRandomCity } =
+  citiesSlice.actions;
 
 export const citiesReducer = citiesSlice.reducer;

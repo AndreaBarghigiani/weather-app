@@ -1,7 +1,8 @@
 import clsx from "clsx";
 
 // Redux
-import { useGetWeatherQuery } from "../store/";
+import { useDispatch } from "react-redux";
+import { useGetWeatherQuery, setCurrentCity } from "../store/";
 
 // Date
 import dayjs from "dayjs";
@@ -14,6 +15,7 @@ dayjs.extend(timezone);
 import { isDayLight } from "../utils";
 
 function CityCard({ city }) {
+  const dispatch = useDispatch();
   const {
     data: weather,
     error,
@@ -30,8 +32,13 @@ function CityCard({ city }) {
     weather?.current?.sunrise,
     weather?.current?.sunset
   );
+
+  const handleCitySelection = () => {
+    dispatch(setCurrentCity(city));
+  };
+
   const classes = clsx(
-    "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-xl",
+    "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-xl cursor-pointer",
     {
       "bg-blue-600": isSunUp,
       "bg-blue-900": !isSunUp,
@@ -39,7 +46,7 @@ function CityCard({ city }) {
   );
 
   return (
-    <div className={classes}>
+    <div className={classes} onClick={handleCitySelection}>
       <header>
         <h2 className="text-3xl font-semibold">{city.name}</h2>
         {cityDate ? (

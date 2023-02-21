@@ -28,7 +28,7 @@ function CityMain({ className }) {
   const cityDate = weather ? dayjs().tz(weather.timezone) : null;
   const classes = clsx(
     className,
-    "rounded-xl relative flex items-start py-10 px-32 bg-right-top bg-[url('/turin.jpg')]",
+    "rounded-xl relative flex items-start py-10 px-32 bg-right-top bg-[url('/turin.jpg')] max-h-[440px]",
     {
       "text-md": true,
     }
