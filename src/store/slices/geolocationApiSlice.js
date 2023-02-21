@@ -18,7 +18,19 @@ export const geolocationSlice = createApi({
         };
       },
     }),
+    findCityCoord: builder.query({
+      query: ({ lat, lon }) => {
+        return {
+          url: "reverse",
+          params: {
+            lat,
+            lon,
+            appid: import.meta.env.VITE_WEATHER_KEY,
+          },
+        };
+      },
+    }),
   }),
 });
 
-export const { useFindCityQuery } = geolocationSlice;
+export const { useFindCityQuery, useFindCityCoordQuery } = geolocationSlice;
