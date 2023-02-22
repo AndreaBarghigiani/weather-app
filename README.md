@@ -4,6 +4,8 @@
 
 React.js - Redux (RTK Query) - TailwindCSS - OpenWeather API
 
+## Description
+
 Simple web application to display current and forecast weather data from any city.
 
 ![Screenshot of the Design](public/weather-app.jpg)
