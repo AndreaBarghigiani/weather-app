@@ -3,7 +3,7 @@
     "name": "Turin",
     "lat": 45.0677551,
     "lon": 7.6824892,
-    "current": false
+    "current": true
   },
   {
     "name": "London",
@@ -16,11 +16,5 @@
     "lat": 41.8933203,
     "lon": 12.4829321,
     "current": false
-  },
-  {
-    "name": "San Francisco",
-    "lat": 37.7790262,
-    "lon": -122.419906,
-    "current": true
   }
 ]

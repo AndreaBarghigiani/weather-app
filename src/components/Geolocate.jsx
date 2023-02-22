@@ -45,10 +45,12 @@ function Geolocate({ className }) {
 
   return (
     <div className={classes}>
-      <h3 className="my-4 text-2xl font-semibold text-app-500">Localization</h3>
+      <h3 className="mb-4 ml-4 text-2xl font-semibold text-app-text">
+        Localization
+      </h3>
 
       <button
-        className="flex w-full flex-col items-center rounded-xl bg-blue-500 p-6 text-center text-white"
+        className="flex w-full flex-col items-center rounded-xl bg-gradient-to-br from-app-day-start to-app-day-end p-6 text-center text-2xl font-medium text-white shadow-app"
         onClick={handleGeolocation}
       >
         {isLoading ? (

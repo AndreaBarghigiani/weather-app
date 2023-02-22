@@ -38,10 +38,10 @@ function CityCard({ city }) {
   };
 
   const classes = clsx(
-    "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-xl cursor-pointer",
+    "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-app cursor-pointer mx-6 bg-gradient-to-br",
     {
-      "bg-blue-600": isSunUp,
-      "bg-blue-900": !isSunUp,
+      "from-app-day-start to-app-day-end": isSunUp,
+      "from-app-night-start to-app-night-end": !isSunUp,
     }
   );
 
@@ -50,10 +50,14 @@ function CityCard({ city }) {
       <header>
         <h2 className="text-3xl font-semibold">{city.name}</h2>
         {cityDate ? (
-          <time className="text-sm font-medium" dateTime={cityDate.format()}>
-            {cityDate.format("dddd DD,")}
-            <br />
-            {cityDate.format("MMMM")}
+          <time dateTime={cityDate.format()}>
+            <span className="mb-2 block text-sm font-medium">
+              {cityDate.format("dddd DD, MMMM")}
+            </span>
+
+            <span className="text-xs font-light">
+              {cityDate.format("h:mm a")}
+            </span>
           </time>
         ) : null}
       </header>

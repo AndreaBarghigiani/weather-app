@@ -1,5 +1,11 @@
 [
   {
+    "name": "San Francisco",
+    "lat": 37.7790262,
+    "lon": -122.419906,
+    "current": true
+  },
+  {
     "name": "Dubai",
     "lat": 25.2653471,
     "lon": 55.2924914,

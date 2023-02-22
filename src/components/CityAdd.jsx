@@ -11,7 +11,7 @@ function CityAdd() {
 
   return (
     <button
-      className="mx-auto my-4 flex font-semibold text-app-500"
+      className="mx-auto flex font-semibold text-app-text"
       onClick={handleClick}
     >
       <svg
@@ -20,7 +20,7 @@ function CityAdd() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="mr-3 h-6 w-6 rounded border border-app-500"
+        className="mr-3 h-6 w-6 rounded border border-app-text"
       >
         <path
           strokeLinecap="round"

@@ -4,7 +4,7 @@ import { addCustomCity } from "../store";
 
 function SelectCity({ cities, emtpySearchTerm }) {
   return (
-    <div className="flex max-h-24 flex-col space-y-3 overflow-scroll py-2">
+    <div className="flex max-h-24 flex-col space-y-3 overflow-scroll bg-white py-2 pl-4 pr-2">
       {cities.map((city) => (
         <SelectRow
           key={city.lat}
@@ -25,7 +25,7 @@ function SelectRow({ city, emtpySearchTerm }) {
   };
 
   return (
-    <div className="flex items-center rounded-xl border bg-white pl-4">
+    <div className="flex items-center">
       <div>
         <h4>
           <span className="mr-2 font-semibold">{city.name}</span>

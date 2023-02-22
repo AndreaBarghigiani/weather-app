@@ -5,7 +5,7 @@ function CityTemp({ className, weather }) {
   const { icon } = weather.current.weather[0];
   const classes = clsx(
     className,
-    "bg-gradient-to-tl from-blue-500 to-blue-600 pt-6 pb-4 rounded-r-xl rouded-b-xl shadow-xl"
+    "bg-gradient-to-br pt-6 pb-4 rounded-r-xl rouded-b-xl shadow-app from-app-day-start to-app-day-end"
   );
 
   return (

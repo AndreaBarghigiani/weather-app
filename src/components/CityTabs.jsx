@@ -29,8 +29,8 @@ function CityTabs({ className }) {
   const classes = clsx(className);
   const tabClasses = (selected) =>
     clsx("p-4 text-2xl font-semibold rounded-t-xl border-0 outline-0 ring-0", {
-      "bg-white text-app-500 shadow-tab": !selected,
-      "bg-blue-500 text-white shadow-tab-active": selected,
+      "bg-white text-app-text shadow-tab": !selected,
+      "bg-app-day-start text-white shadow-tab-active": selected,
     });
   const tabDotsClasses = (selected) =>
     clsx("h-2 w-2 rounded-full border-0 outline-0 ring-0", {
@@ -48,7 +48,7 @@ function CityTabs({ className }) {
             This month
           </Tab>
         </Tab.List>
-        <Tab.Panels className="relative rounded-xl bg-blue-500 p-6 text-white">
+        <Tab.Panels className="relative rounded-xl bg-gradient-to-b from-app-day-start to-app-day-end p-6 text-white shadow-app">
           <Tab.Panel>
             {isSuccess ? (
               <Tab.Group>
