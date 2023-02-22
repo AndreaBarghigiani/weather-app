@@ -10,16 +10,18 @@ function TodayLine({ hour, index, timezone }) {
         "pt-10 pb-6": index === 0,
       })}
     >
-      {index === 0 ? <p className="absolute -top-3">Now</p> : null}
+      {index === 0 ? (
+        <p className="absolute -top-1 font-semibold">Now</p>
+      ) : null}
       <div
         className={clsx("rounded-full bg-white", {
           "h-2.5 w-2.5": index !== 0,
-          "h-3.5 w-3.5": index === 0,
+          "h-4 w-4": index === 0,
         })}
       />
       <div
         className={clsx(
-          "absolute left-1/2  h-full w-px -translate-x-1/2 transform bg-white",
+          "absolute left-1/2  h-full w-[4px] -translate-x-1/2 transform bg-white",
           {
             "top-5": index !== 0,
             "top-9": index === 0,

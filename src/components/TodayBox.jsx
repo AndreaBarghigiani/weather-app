@@ -15,7 +15,7 @@ function TodayBox({ weather }) {
         ))}
       </div>
       <div className="pointer-events-none absolute top-0 h-10 w-full rounded-t-xl bg-gradient-to-b from-app-day-start" />
-      <div className="pointer-events-none absolute bottom-0 h-10 w-full rounded-b-xl bg-gradient-to-t from-app-day-end" />
+      <div className="pointer-events-none absolute bottom-0 h-16 w-full rounded-b-xl bg-gradient-to-t from-app-day-end" />
     </div>
   );
 }
