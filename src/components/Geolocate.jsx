@@ -25,7 +25,7 @@ function Geolocate({ className }) {
     }
   }, [lat, lon, data]);
 
-  const classes = clsx(className);
+  const classes = clsx(className, "mx-6");
 
   const handleGeolocation = () => {
     // No geolocation no party

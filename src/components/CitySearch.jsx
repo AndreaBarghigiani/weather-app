@@ -13,7 +13,7 @@ function CitySearch({ className }) {
 
   const { data, isLoading, error } = useFindCityQuery(searchTerm, { skip });
 
-  const classes = clsx(className);
+  const classes = clsx(className, "mx-6");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ function CitySearch({ className }) {
           className="w-full rounded-xl p-4 ring-0 focus:outline-none"
           ref={inputTerm}
         />
-        <button className="ml-auto rounded-xl bg-blue-500 p-4 text-white">
+        <button className="ml-auto rounded-xl bg-gradient-to-br from-app-day-start to-app-day-end p-4 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
