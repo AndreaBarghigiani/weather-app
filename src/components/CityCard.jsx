@@ -40,7 +40,7 @@ function CityCard({ city }) {
   const classes = clsx(
     "grid grid-cols-3 items-center rounded-xl p-4 text-white shadow-app cursor-pointer mx-6 bg-gradient-to-br",
     {
-      "from-app-day-start to-app-day-end": isSunUp,
+      "from-app-text to-app-day-start": isSunUp,
       "from-app-night-start to-app-night-end": !isSunUp,
     }
   );
